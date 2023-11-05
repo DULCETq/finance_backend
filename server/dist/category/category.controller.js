@@ -66,7 +66,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], CategoryController.prototype, "findOne", null);
 __decorate([
-    (0, common_1.Patch)(':type:/id'),
+    (0, common_1.Patch)(':type/:id'),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard, author_guard_1.AuthorGuard),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),

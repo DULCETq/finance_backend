@@ -38,6 +38,9 @@ let TransactionService = class TransactionService {
             where: {
                 user: { id }
             },
+            relations: {
+                category: true
+            },
             order: {
                 createdAt: 'DESC',
             }

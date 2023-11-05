@@ -2,11 +2,10 @@ import {
     Column,
     CreateDateColumn,
     Entity,
-    ManyToOne,
-    PrimaryColumn,
-    UpdateDateColumn,
     JoinColumn,
-    PrimaryGeneratedColumn
+    ManyToOne,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
 } from "typeorm";
 import {User} from "../../user/entities/user.entity";
 import {Category} from "../../category/entities/category.entity";
@@ -26,7 +25,8 @@ export class Transaction {
     @JoinColumn({name: 'user_id'})
     user: User
 
-    @ManyToOne(() => Category, (category) => category.transactions)
+    @ManyToOne(() => Category, (category) => category.transactions,
+        {onDelete: 'SET NULL'})
     @JoinColumn({name: 'category_id'})
     category: Category
 
